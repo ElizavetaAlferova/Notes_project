@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}
+  Ноты «{{ notes.title }}»
+{% endblock %}
+{% block content %}
+<nav>
+<p>Ноты {{ notes.title }}{% if notes.composer %} композитора {{ notes.composer }} {% endif %}</p>
+</nav>
+
+
+{% endblock %}

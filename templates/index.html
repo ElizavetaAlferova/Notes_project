@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+  Список нот
+{% endblock %}
+{% block content %}
+  <h1 class="mb-5">Ноты</h1>
+  {% for note in notes %}
+    <article class="mb-5">
+      {% include "notes/notes_card.html" %}
+    </article>
+  {% endfor %}
+{% endblock %}
