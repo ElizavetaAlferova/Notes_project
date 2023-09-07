@@ -10,7 +10,7 @@ class NoteCreateForm(forms.ModelForm):
 
     class Meta:
         model = Note
-        fields = ('title', 'text', 'composer', 'pub_date')
+        fields = ('title', 'composer', 'description', 'pdf', 'image', 'pub_date')
         widgets = {
             'pub_date': forms.DateTimeInput(attrs={'type': 'datetime-local'})
         }
