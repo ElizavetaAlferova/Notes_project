@@ -10,5 +10,6 @@ urlpatterns = [
     path('pdf/<int:pk>/', views.pdf_view, name='pdf_view'),
     path('upload/', views.create_notes, name='upload'),
     path('edit/<int:pk>', views.edit, name='edit'),
-    path('delete/<int:pk>', views.delete, name='delete')
+    path('delete/<int:pk>', views.delete, name='delete'),
+    path('search_answer/', views.search_answer, name='search_answer')
 ]

@@ -1,19 +1,24 @@
 {% load static %}
-<div class="card" style="width: 40rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{ note.title }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">
+<div style="width: 40rem; margin:0 auto; background:  #659DBD">
+  <div style="background: white">
+    <h5 style="background-color:
+     #2c6db0"><a style="color: white"
+                 href="{% url 'note_detail' note.id %}">
+        {{ note.title }}<br>{{ note.composer }}</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">
 
     </h6>
-    <p class="card-text">{{ note.text|truncatewords:10 }}</p>
+    <p class="card-text" style="margin-left: 33px">{{ note.description|truncatewords:20 }}</p>
       {% if note.pdf %}
-      <a href="{% url 'pdf_view' note.id %}">{{ note.pdf }}</a>
+          <div><a class="btn" href="{% url 'pdf_view' note.id %}">{{ note.pdf }}</a></div>
+
 {% endif %}
-      <div>
-        <a href="{% url 'edit' note.id %}">Изменить запись</a>
-      </div>
-      <div>
-        <a href="{% url 'delete' note.id %}">Удалить запись</a>
-      </div>
+  {% if note.audio %}
+      <div><a class="btn" href="media/{{ note.audio }}">{{ note.audio }}</a></div>
+
+{% endif %}
+<a class="btn" href="{% url 'edit' note.id %}">Изменить запись</a>
+<a class="btn" href="{% url 'delete' note.id %}">Удалить запись</a>
+
   </div>
 </div>

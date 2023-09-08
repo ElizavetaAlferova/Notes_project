@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+{% for note in notes %}
+    <article class="mb-5">
+      {% include "notes/notes_card.html" %}
+    </article>
+  {% endfor %}
+{% endblock %}
